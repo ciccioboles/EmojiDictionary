@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -62,22 +63,49 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-Ws-89Z">
-                                <rect key="frame" x="166.5" y="557" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="ofs-XG-OVb">
+                                <rect key="frame" x="16" y="385.5" width="343" height="171.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-Ws-89Z">
+                                        <rect key="frame" x="150.5" y="0.0" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Wid-3w-VW0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Category: Smiley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrZ-h6-VEz">
+                                        <rect key="frame" x="106.5" y="76" width="130" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="BirthDate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR2-IX-JMp">
+                                        <rect key="frame" x="133" y="151.5" width="77.5" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jrZ-h6-VEz" firstAttribute="centerY" secondItem="ofs-XG-OVb" secondAttribute="centerY" id="WEG-tI-X2p"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jSO-Ws-89Z" firstAttribute="centerX" secondItem="RHi-au-oK9" secondAttribute="centerX" id="EKl-xy-7LV"/>
-                            <constraint firstItem="jSO-Ws-89Z" firstAttribute="top" secondItem="IWN-HD-duW" secondAttribute="bottom" constant="194" id="GTW-xs-PJI"/>
+                            <constraint firstItem="2Ls-Cw-rCh" firstAttribute="top" secondItem="ofs-XG-OVb" secondAttribute="bottom" constant="110" id="Eka-7f-4g4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ofs-XG-OVb" secondAttribute="trailing" id="ZYa-dA-shG"/>
+                            <constraint firstItem="ofs-XG-OVb" firstAttribute="leading" secondItem="RHi-au-oK9" secondAttribute="leadingMargin" id="azI-45-0oO"/>
                             <constraint firstItem="IWN-HD-duW" firstAttribute="centerX" secondItem="RHi-au-oK9" secondAttribute="centerX" id="c0C-iA-Q97"/>
                             <constraint firstItem="IWN-HD-duW" firstAttribute="top" secondItem="Y2c-dD-pJt" secondAttribute="bottom" constant="60" id="ghs-XX-shf"/>
+                            <constraint firstItem="ofs-XG-OVb" firstAttribute="centerX" secondItem="RHi-au-oK9" secondAttribute="centerX" id="yCH-MP-GkK"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="birthdateLbl" destination="OR2-IX-JMp" id="jpH-6L-znU"/>
+                        <outlet property="categoryLbl" destination="jrZ-h6-VEz" id="iRW-Sk-YJt"/>
                         <outlet property="emojiDefLbl" destination="jSO-Ws-89Z" id="Jml-RR-WMY"/>
                         <outlet property="emojiLbl" destination="IWN-HD-duW" id="7EE-fW-YyE"/>
                     </connections>

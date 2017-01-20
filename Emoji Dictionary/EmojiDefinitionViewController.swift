@@ -10,11 +10,13 @@ import UIKit
 
 class EmojiDefinitionViewController: UIViewController {
 
+    @IBOutlet weak var categoryLbl: UILabel!
+    @IBOutlet weak var birthdateLbl: UILabel!
     
     @IBOutlet weak var emojiLbl: UILabel!
     @IBOutlet weak var emojiDefLbl: UILabel!
     
-    var emoji = "No Emoji"
+    var emoji = Emoji()
     
     
     
@@ -22,25 +24,12 @@ class EmojiDefinitionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emojiLbl.text = emoji
+        emojiLbl.text = emoji.stringEmoji
+        birthdateLbl.text = "BirthYear: \(emoji.birthYear)"
+        categoryLbl.text = "Category: \(emoji.category)"
+        emojiDefLbl.text = emoji.definition
         
-        if emoji == "🦄" {
-        emojiDefLbl.text = "It's a cute unicorn!"
-        } else if emoji == "🍒" {
-            emojiDefLbl.text = "A couple of cherries."
-        } else if emoji == "🍔" {
-            emojiDefLbl.text = "A juicy cheeseburger!"
-        }else if emoji == "🐬" {
-            emojiDefLbl.text = "A blue dolphin."
-        } else if emoji == "💾" {
-            emojiDefLbl.text = "A cool old floppy disk."
-        } else if emoji == "📬" {
-            emojiDefLbl.text = "You've got mail!"
-        } else if emoji == "🌵" {
-            emojiDefLbl.text = "A big green cactus."
-
-        }
-    
+        
     
     }
 
